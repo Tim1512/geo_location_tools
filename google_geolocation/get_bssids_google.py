@@ -1,3 +1,10 @@
+#go to https://developers.google.com/maps/documentation/geolocation/get-api-key
+#to create a project and get an API key
+#then plug it into the key= below
+#after you have an API key, you go here https://console.cloud.google.com/apis/credentials to manage it
+
+
+
 #this is only for Windows; the netsh stuff only works on Windows
 #you could easily mod it for Linux/Mac though
 

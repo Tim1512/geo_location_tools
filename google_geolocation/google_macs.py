@@ -24,6 +24,12 @@ def getGoogleWiFi(macs):
 	return pos
 	
 #test values if you run it directly
+#go to https://developers.google.com/maps/documentation/geolocation/get-api-key
+#to create a project and get an API key
+#then plug it into the key= below
+#after you have an API key, you go here https://console.cloud.google.com/apis/credentials to manage it
+
+
 #enter from the command line or it will use the test dictionary
 
 if __name__ == '__main__':
