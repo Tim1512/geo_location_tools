@@ -1,0 +1,1016 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Kim Thomson</author>
+ <class>OpenCellIDFilter</class>
+ <widget class="QMainWindow" name="OpenCellIDFilter">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>695</width>
+    <height>575</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>695</width>
+    <height>575</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>695</width>
+    <height>575</height>
+   </size>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::NoFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>OpenCellID Filter and Export</string>
+  </property>
+  <property name="toolTip">
+   <string>OpenCellID Filter and Export</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="inputMethodHints">
+   <set>Qt::ImhNone</set>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>671</width>
+      <height>271</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QGroupBox" name="filter_group">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>641</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="toolTip">
+      <string>Filter SQLite file by MCC-MNC-LAC_CID</string>
+     </property>
+     <property name="title">
+      <string>Filter Cell Sites by MCC-MNC-LAC-CID-LAT/LONG (use your country or area's DB to save time here)</string>
+     </property>
+     <widget class="QLineEdit" name="MCC_input">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>133</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Enter Mobile Country Code here</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="MNC_input">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>60</y>
+        <width>133</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Enter Mobile Network Code here</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="LAC_input">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>60</y>
+        <width>133</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Enter Location Area Code here</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="CID_input">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>60</y>
+        <width>133</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Enter Cell ID here</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Mobile Country Code (MCC)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>40</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Mobile Network Code (MNC)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>40</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Location Area Code (LAC)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>40</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Cell ID (CID)</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lat1_input">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>133</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Enter Latitude Limit Here</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="long2_input">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>110</y>
+        <width>133</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Enter Longitude Limit Here</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lat2_input">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>110</y>
+        <width>133</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Enter Latitude Limit Here</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="long1_input">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>110</y>
+        <width>133</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Enter Longitude Limit Here</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Latitude Limit 1</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>90</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Latitude Limit 2</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>90</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Longitude Limit 1</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>90</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Longitude Limit 2</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="bounding_box_entry">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>170</y>
+        <width>421</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Enter the name of a location to retrieve its Bounding Box</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="bb_nominatim_button">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>150</y>
+        <width>171</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>Get Bounding Box from Nominatim</string>
+      </property>
+      <property name="text">
+       <string>Bounding Box from Nominatim</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="lat_long_check">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>131</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Bound by Lat/Long</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="clear_values_button">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>230</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Clear all MCC-MNC-LAC-CID values</string>
+     </property>
+     <property name="text">
+      <string>Clear All Values</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="show_bounding_box">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>230</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Show Bounding Box</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>671</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QGroupBox" name="import_group">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>641</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>Import OpenCellID CSV to SQLite File (this could take some time for the whole database)</string>
+     </property>
+     <widget class="QPushButton" name="select_sql_export_button">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>50</y>
+        <width>131</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>Select filename of exported SQLite file</string>
+      </property>
+      <property name="text">
+       <string>Select SQLite to Export</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="select_csv_button">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>20</y>
+        <width>131</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>Select input OpenCellID CSV file (cell_towers*.csv)</string>
+      </property>
+      <property name="text">
+       <string>Select CSV to Import</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="file_export_box">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>481</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selected export filename (SQLite)</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="file_import_box">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>481</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selected import filename (CSV)</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="import_button">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>80</y>
+        <width>131</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>Perform the import of CSV to SQLite</string>
+      </property>
+      <property name="text">
+       <string>Convert CSV to SQLite</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>409</y>
+      <width>671</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Export Options for Filtered Sites</string>
+    </property>
+    <widget class="QLineEdit" name="source_SQLite_box">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>351</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="export_button">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>70</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Save Filtered Results</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="select_sql_source_button">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>20</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="toolTip">
+      <string>Select source SQLite tower file for filtering</string>
+     </property>
+     <property name="text">
+      <string>Select Source SQLite File</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="export_sqlite_check">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>20</y>
+       <width>101</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="acceptDrops">
+      <bool>true</bool>
+     </property>
+     <property name="toolTip">
+      <string>Check to export data as SQLite</string>
+     </property>
+     <property name="text">
+      <string>Export SQLite</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="export_kmz_check">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>50</y>
+       <width>81</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="toolTip">
+      <string>Check here to export KMZ File</string>
+     </property>
+     <property name="text">
+      <string>Export KMZ</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="export_csv_check">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>100</y>
+       <width>81</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Export CSV</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="open_earth_button">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>70</y>
+       <width>81</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Open now</string>
+     </property>
+    </widget>
+   </widget>
+   <zorder>groupBox</zorder>
+   <zorder>frame</zorder>
+   <zorder>frame_2</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>695</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuImport">
+    <property name="title">
+     <string>Import</string>
+    </property>
+    <addaction name="actionImport"/>
+    <addaction name="actionExport"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuImport"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open SQLite</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save Filtered</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionExport_CSV">
+   <property name="text">
+    <string>Export CSV</string>
+   </property>
+  </action>
+  <action name="actionExport_TSV">
+   <property name="text">
+    <string>Export TSV</string>
+   </property>
+  </action>
+  <action name="actionExport_KML">
+   <property name="text">
+    <string>Export KML</string>
+   </property>
+  </action>
+  <action name="actionImport_CSV">
+   <property name="text">
+    <string>Import CSV</string>
+   </property>
+  </action>
+  <action name="actionImport_SQLite">
+   <property name="text">
+    <string>Import SQLite</string>
+   </property>
+  </action>
+  <action name="actionImport_TSV">
+   <property name="text">
+    <string>Import TSV</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="actionExport_SQLite">
+   <property name="text">
+    <string>Export SQLite</string>
+   </property>
+  </action>
+  <action name="actionImport">
+   <property name="text">
+    <string>Import CSV to SQLite</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="text">
+    <string>Export SQLite File</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="9"/>
+ <tabstops>
+  <tabstop>file_import_box</tabstop>
+  <tabstop>file_export_box</tabstop>
+  <tabstop>select_csv_button</tabstop>
+  <tabstop>select_sql_export_button</tabstop>
+  <tabstop>import_button</tabstop>
+  <tabstop>MCC_input</tabstop>
+  <tabstop>MNC_input</tabstop>
+  <tabstop>LAC_input</tabstop>
+  <tabstop>CID_input</tabstop>
+  <tabstop>lat1_input</tabstop>
+  <tabstop>lat2_input</tabstop>
+  <tabstop>long1_input</tabstop>
+  <tabstop>long2_input</tabstop>
+  <tabstop>lat_long_check</tabstop>
+  <tabstop>bounding_box_entry</tabstop>
+  <tabstop>bb_nominatim_button</tabstop>
+  <tabstop>clear_values_button</tabstop>
+  <tabstop>export_sqlite_check</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>clear_values_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MCC_input</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>63</x>
+     <y>411</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>90</x>
+     <y>227</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear_values_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MNC_input</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>92</x>
+     <y>411</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear_values_button</sender>
+   <signal>clicked()</signal>
+   <receiver>LAC_input</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>105</x>
+     <y>411</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>411</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear_values_button</sender>
+   <signal>clicked()</signal>
+   <receiver>CID_input</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>56</x>
+     <y>411</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>572</x>
+     <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear_values_button</sender>
+   <signal>clicked()</signal>
+   <receiver>lat1_input</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>74</x>
+     <y>400</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>76</x>
+     <y>279</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear_values_button</sender>
+   <signal>clicked()</signal>
+   <receiver>long2_input</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>113</x>
+     <y>394</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>618</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear_values_button</sender>
+   <signal>clicked()</signal>
+   <receiver>long1_input</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>44</x>
+     <y>399</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>443</x>
+     <y>278</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear_values_button</sender>
+   <signal>clicked()</signal>
+   <receiver>lat2_input</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>48</x>
+     <y>395</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>279</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear_values_button</sender>
+   <signal>clicked()</signal>
+   <receiver>bounding_box_entry</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>118</x>
+     <y>384</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>208</x>
+     <y>339</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bounding_box_entry</sender>
+   <signal>returnPressed()</signal>
+   <receiver>bb_nominatim_button</receiver>
+   <slot>animateClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>397</x>
+     <y>340</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>515</x>
+     <y>341</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>file_export_box</sender>
+   <signal>returnPressed()</signal>
+   <receiver>import_button</receiver>
+   <slot>animateClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>486</x>
+     <y>85</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>552</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>10</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>
