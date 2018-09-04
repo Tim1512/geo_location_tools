@@ -5,7 +5,7 @@ from PyQt4.Qt import QMessageBox
 from subprocess import Popen
 from django.utils.encoding import smart_unicode
 
-qtCreatorFile = "./ui/OpenCellIDFilter.ui" # Enter User Interface file here.
+qtCreatorFile = "./ui/OpenCellIDFilter.ui"
  
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
  
@@ -47,7 +47,8 @@ class OpenCellId(QtGui.QMainWindow, Ui_MainWindow):
 			#save kml file with name based on the full location name
 			kml_filename = smart_unicode(self.bounding_box_entry.text()).replace(', ', '-').replace(' ', '_') + '_bounding_box.kml'
 			kml.save (kml_filename)
-			Popen('"C:/Program Files (x86)/Google/Google Earth Pro/client/googleearth.exe" "{}"'.format(kml_filename), stdin=None, stdout=None, stderr=None, close_fds=True, shell=True)
+			print '"C:\Program Files\Google\Google Earth Pro\client\googleearth.exe" "{}"'.format(os.path.realpath(kml_filename))
+			Popen('"C:\Program Files\Google\Google Earth Pro\client\googleearth.exe" "{}"'.format(os.path.realpath(kml_filename)), stdin=None, stdout=None, stderr=None, close_fds=True, shell=True)
 		else:
 			self.popupWindow("No Coordinates For Box", "You are missing one or more coordinates for your bounding box. Try searching a location to populate lat/long values.")
 		
