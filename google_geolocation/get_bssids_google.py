@@ -1,3 +1,6 @@
+#this is only for Windows; the netsh stuff only works on Windows
+#you could easily mod it for Linux/Mac though
+
 import os, subprocess, re
 import googlemaps, simplekml, webbrowser
 from googlemaps.geolocation import geolocate
