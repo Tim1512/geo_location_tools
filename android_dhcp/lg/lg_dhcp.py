@@ -25,7 +25,7 @@ for file in os.listdir('.'):
 #make a list to hold the info you'll get from wigle network search		
 net_data = []		
 for mac in macs:
-	data = network.search(netid=mac) #this is a simple search by bssid, which should be unique
+	data = network.search(netid=mac[0]) #this is a simple search by bssid, which should be unique
 	net_data.append(data)
 
 #just write a csv out with what we can get
