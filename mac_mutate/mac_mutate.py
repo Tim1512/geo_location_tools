@@ -27,16 +27,18 @@ def mutator (mac):
 	n1 = int(oui[0], 16) * 16
 	n2 = int(oui[1], 16)
 	
-	#define all possible byte variations for later matchin
+	#define all possible byte variations for later matching
 	bytes = [n1 + n2, (n1 + n2) - 2, (n1 + n2) - 6, (n1 + n2) - 10,\
 			n2 - 2, (0x10 + n2) - 2, (0x20 + n2) - 2, (0x30 + n2) - 2,\
 			(0x40 + n2) - 2, (0x50 + n2) - 2, (0x60 + n2) - 2,
 			(0x70 + n2) - 2, (0x80 + n2) - 2, (0x90 + n2) - 2,\
 			(0xa0 + n2) - 2, (0xb0 + n2) - 2, (0xc0 + n2) - 2,\
 			(0xd0 + n2) - 2, (0xe0 + n2) - 2, (0xf0 + n2) - 2]
+	print bytes
 	
-	#uppercase and convert to hex strings and add back the rest of the oui
-	bytes = [hex(byte)[2:].upper() + oui[2:] for byte in bytes]
+	#uppercase and convert to hex strings and add back the rest of the oui, padd back leading zeroes
+	bytes = [(hex(byte)[2:].upper() + oui[2:]).zfill(6) for byte in bytes]
+	print bytes
 	
 	#look for all of them in the database using enumerate
 	#using enumerate will keep a running tab of the current index to be
