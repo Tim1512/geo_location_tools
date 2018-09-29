@@ -27,7 +27,8 @@ def getGoogleWiFi(macs):
 	pos = (lat, lng, accuracy, address)
 	return pos
 
-#defining the regex to pull BSSID(mac) and signal strength(in quality percentage) from output of netsh command	
+#defining the regex to pull BSSID(mac) and signal strength(in quality percentage) from output of netsh command
+#this won't find all, just ones labeled BSSID 1 by Windows, mod for all	
 regex = 'BSSID 1                 : (.*)\r\n         Signal             : (.*)%  \r\n'
 
 #run the netsh command and put in the data variable
